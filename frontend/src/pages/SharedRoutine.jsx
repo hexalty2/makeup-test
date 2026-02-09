@@ -25,6 +25,7 @@ const SharedRoutine = () => {
 
   useEffect(() => {
     fetchRoutine();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shareId]);
 
   const fetchRoutine = async () => {
@@ -39,9 +40,27 @@ const SharedRoutine = () => {
     }
   };
 
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    toast.success("Link copied to clipboard!");
+  const handleCopyLink = async () => {
+    const link = window.location.href;
+    try {
+      await navigator.clipboard.writeText(link);
+      toast.success("Link copied to clipboard!");
+    } catch (err) {
+      // Fallback for when clipboard API fails
+      const textArea = document.createElement("textarea");
+      textArea.value = link;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-9999px";
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        toast.success("Link copied to clipboard!");
+      } catch (e) {
+        toast.info(`Share link: ${link}`);
+      }
+      document.body.removeChild(textArea);
+    }
   };
 
   const getOccasionLabel = (occasion) => {

@@ -109,10 +109,27 @@ const RoutineGuide = () => {
     setSaving(false);
   };
 
-  const handleCopyLink = () => {
+  const handleCopyLink = async () => {
     const link = `${window.location.origin}/shared/${shareId}`;
-    navigator.clipboard.writeText(link);
-    toast.success("Link copied to clipboard!");
+    try {
+      await navigator.clipboard.writeText(link);
+      toast.success("Link copied to clipboard!");
+    } catch (err) {
+      // Fallback for when clipboard API fails
+      const textArea = document.createElement("textarea");
+      textArea.value = link;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-9999px";
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        toast.success("Link copied to clipboard!");
+      } catch (e) {
+        toast.info(`Share link: ${link}`);
+      }
+      document.body.removeChild(textArea);
+    }
   };
 
   const handleRedoWithOccasion = () => {
