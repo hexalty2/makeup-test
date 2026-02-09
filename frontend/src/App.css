@@ -1,34 +1,127 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* GlowGuide Custom Styles */
+
+/* Button Styles */
+.btn-primary {
+  @apply bg-[#C27863] text-white hover:bg-[#8A5342] rounded-full px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-300;
+  box-shadow: 0 4px 14px 0 rgba(194, 120, 99, 0.39);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(194, 120, 99, 0.23);
+  transform: translateY(-2px);
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.btn-secondary {
+  @apply bg-transparent border border-[#C27863] text-[#C27863] hover:bg-[#F9F7F2] rounded-full px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-300;
 }
 
-.App-link {
-    color: #61dafb;
+/* Card Styles */
+.card-feature {
+  @apply bg-white rounded-[2rem] p-8 transition-all duration-300 border border-stone-100;
+  box-shadow: 0 8px 30px rgb(0, 0, 0, 0.04);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.card-feature:hover {
+  box-shadow: 0 8px 30px rgb(0, 0, 0, 0.08);
+}
+
+/* Selection Card for Quiz */
+.selection-card {
+  @apply bg-white rounded-[1.5rem] p-6 cursor-pointer transition-all duration-300 border-2 border-transparent;
+  box-shadow: 0 4px 20px rgb(0, 0, 0, 0.04);
+}
+
+.selection-card:hover {
+  @apply border-[#E0AFA0];
+  transform: translateY(-2px);
+}
+
+.selection-card.selected {
+  @apply border-[#C27863];
+  box-shadow: 0 0 0 4px rgba(194, 120, 99, 0.15);
+}
+
+/* Progress Tracker */
+.progress-step {
+  @apply w-4 h-4 rounded-full border-2 border-[#C27863] transition-all duration-300;
+}
+
+.progress-step.completed {
+  @apply bg-[#C27863];
+}
+
+.progress-step.active {
+  @apply bg-[#C27863];
+  box-shadow: 0 0 0 4px rgba(194, 120, 99, 0.2);
+}
+
+.progress-line {
+  @apply w-0.5 bg-[#E0AFA0] transition-all duration-500;
+}
+
+.progress-line.completed {
+  @apply bg-[#C27863];
+}
+
+/* Input Styles */
+.input-standard {
+  @apply bg-[#F9F7F2] border-none text-[#333333] placeholder:text-[#999999] rounded-xl px-6 py-4 focus:ring-2 focus:ring-[#C27863]/20 transition-all;
+}
+
+/* Hero Section */
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(249, 247, 242, 0) 0%, #F9F7F2 100%);
+}
+
+/* Tip Card */
+.tip-card {
+  @apply bg-[#F9F7F2] rounded-xl p-4 border-l-4 border-[#9CAFA0];
+}
+
+/* Step Number Badge */
+.step-badge {
+  @apply w-10 h-10 rounded-full bg-[#C27863] text-white flex items-center justify-center font-bold;
+}
+
+/* Recommendation Card */
+.recommendation-item {
+  @apply flex items-start gap-3 p-4 bg-white rounded-xl transition-all duration-300;
+  box-shadow: 0 2px 10px rgb(0, 0, 0, 0.03);
+}
+
+.recommendation-item:hover {
+  box-shadow: 0 4px 15px rgb(0, 0, 0, 0.06);
+}
+
+/* Share Button */
+.share-btn {
+  @apply inline-flex items-center gap-2 bg-[#9CAFA0] text-white hover:bg-[#6B7F70] rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300;
+}
+
+/* Toast Animation */
+.toast-enter {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Skeleton Loader */
+.skeleton {
+  @apply bg-gradient-to-r from-stone-100 via-stone-200 to-stone-100 bg-[length:200%_100%] animate-pulse rounded-xl;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .hero-title {
+    @apply text-3xl;
+  }
 }
