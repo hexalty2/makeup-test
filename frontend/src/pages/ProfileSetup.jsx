@@ -17,57 +17,57 @@ const ProfileSetup = () => {
   const steps = [
     {
       key: "skin_tone",
-      title: "What's your skin tone?",
-      subtitle: "Select the shade that best matches your natural skin color",
+      title: "Quel est votre teint ?",
+      subtitle: "Sélectionnez la teinte qui correspond le mieux à votre couleur de peau naturelle",
       options: [
-        { value: "very_fair", label: "Very Fair", color: "#FAE5D3" },
-        { value: "fair", label: "Fair", color: "#F5D5C8" },
-        { value: "light", label: "Light", color: "#E8C4A2" },
-        { value: "medium", label: "Medium", color: "#D4A574" },
-        { value: "tan", label: "Tan", color: "#B8865C" },
-        { value: "deep", label: "Deep", color: "#8B5A2B" }
+        { value: "very_fair", label: "Très clair", color: "#FAE5D3" },
+        { value: "fair", label: "Clair", color: "#F5D5C8" },
+        { value: "light", label: "Léger", color: "#E8C4A2" },
+        { value: "medium", label: "Moyen", color: "#D4A574" },
+        { value: "tan", label: "Hâlé", color: "#B8865C" },
+        { value: "deep", label: "Foncé", color: "#8B5A2B" }
       ]
     },
     {
       key: "undertone",
-      title: "What's your undertone?",
-      subtitle: "Look at the veins on your wrist - blue/purple = cool, green = warm",
+      title: "Quel est votre sous-ton ?",
+      subtitle: "Regardez les veines de votre poignet - bleu/violet = froid, vert = chaud",
       options: [
-        { value: "cool", label: "Cool", description: "Pink / Red undertones", color: "#E8C3C3" },
-        { value: "warm", label: "Warm", description: "Yellow / Golden undertones", color: "#E8D4B8" },
-        { value: "neutral", label: "Neutral", description: "Mix of both", color: "#D4C4B0" },
-        { value: "olive", label: "Olive", description: "Green / Yellow undertones", color: "#C4C4A0" }
+        { value: "cool", label: "Froid", description: "Sous-tons roses / rouges", color: "#E8C3C3" },
+        { value: "warm", label: "Chaud", description: "Sous-tons jaunes / dorés", color: "#E8D4B8" },
+        { value: "neutral", label: "Neutre", description: "Mélange des deux", color: "#D4C4B0" },
+        { value: "olive", label: "Olive", description: "Sous-tons verts / jaunes", color: "#C4C4A0" }
       ]
     },
     {
       key: "skin_type",
-      title: "What's your skin type?",
-      subtitle: "Think about how your skin feels by midday without makeup",
+      title: "Quel est votre type de peau ?",
+      subtitle: "Pensez à l'état de votre peau en milieu de journée sans maquillage",
       options: [
-        { value: "oily", label: "Oily", description: "Shiny throughout the day" },
-        { value: "dry", label: "Dry", description: "Feels tight or flaky" },
-        { value: "combination", label: "Combination", description: "Oily T-zone, dry cheeks" },
-        { value: "normal", label: "Normal", description: "Balanced, rarely problematic" }
+        { value: "oily", label: "Grasse", description: "Brillante tout au long de la journée" },
+        { value: "dry", label: "Sèche", description: "Sensation de tiraillement ou desquamation" },
+        { value: "combination", label: "Mixte", description: "Zone T grasse, joues sèches" },
+        { value: "normal", label: "Normale", description: "Équilibrée, rarement problématique" }
       ]
     },
     {
       key: "makeup_level",
-      title: "What's your makeup experience?",
-      subtitle: "We'll adjust our recommendations based on your skill level",
+      title: "Quelle est votre expérience en maquillage ?",
+      subtitle: "Nous ajusterons nos recommandations selon votre niveau",
       options: [
-        { value: "beginner", label: "Beginner", description: "New to makeup or prefer simple looks" },
-        { value: "intermediate", label: "Intermediate", description: "Comfortable with basics, ready for more" }
+        { value: "beginner", label: "Débutante", description: "Nouvelle en maquillage ou préfère les looks simples" },
+        { value: "intermediate", label: "Intermédiaire", description: "À l'aise avec les bases, prête pour plus" }
       ]
     },
     {
       key: "occasion",
-      title: "What's the occasion?",
-      subtitle: "This helps us suggest the right intensity and colors",
+      title: "Quelle est l'occasion ?",
+      subtitle: "Cela nous aide à suggérer la bonne intensité et les bonnes couleurs",
       options: [
-        { value: "everyday", label: "Everyday", description: "Natural, effortless look" },
-        { value: "work", label: "Work", description: "Polished but professional" },
-        { value: "night_out", label: "Night Out", description: "Glamorous and fun" },
-        { value: "special_event", label: "Special Event", description: "Statement-making" }
+        { value: "everyday", label: "Quotidien", description: "Look naturel et sans effort" },
+        { value: "work", label: "Travail", description: "Soigné mais professionnel" },
+        { value: "night_out", label: "Soirée", description: "Glamour et amusant" },
+        { value: "special_event", label: "Événement spécial", description: "Look affirmé" }
       ]
     }
   ];
@@ -111,7 +111,7 @@ const ProfileSetup = () => {
           data-testid="back-btn"
         >
           <ArrowLeft className="w-5 h-5" />
-          <span className="hidden sm:inline">Back</span>
+          <span className="hidden sm:inline">Retour</span>
         </button>
         <div className="flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-[#C27863]" />
@@ -126,7 +126,7 @@ const ProfileSetup = () => {
       <div className="px-6 md:px-12 mb-8">
         <div className="max-w-xl mx-auto">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-[#999999]">Step {currentStep + 1} of {steps.length}</span>
+            <span className="text-sm text-[#999999]">Étape {currentStep + 1} sur {steps.length}</span>
             <span className="text-sm text-[#999999]">{Math.round(((currentStep + 1) / steps.length) * 100)}%</span>
           </div>
           <div className="h-2 bg-[#E0AFA0]/30 rounded-full overflow-hidden">
@@ -194,7 +194,7 @@ const ProfileSetup = () => {
               className={`btn-primary flex items-center gap-2 ${!canProceed ? 'opacity-50 cursor-not-allowed' : ''}`}
               data-testid="continue-btn"
             >
-              {isLastStep ? "See My Routine" : "Continue"}
+              {isLastStep ? "Voir Ma Routine" : "Continuer"}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>

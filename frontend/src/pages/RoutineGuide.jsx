@@ -53,7 +53,7 @@ const RoutineGuide = () => {
       setLoading(false);
     } catch (error) {
       console.error("Error fetching recommendations:", error);
-      toast.error("Failed to load recommendations");
+      toast.error("Échec du chargement des recommandations");
       setLoading(false);
     }
   };
@@ -101,10 +101,10 @@ const RoutineGuide = () => {
       });
       localStorage.setItem("glowguide_routines", JSON.stringify(savedRoutines));
       
-      toast.success("Routine saved successfully!");
+      toast.success("Routine enregistrée avec succès !");
     } catch (error) {
       console.error("Error saving routine:", error);
-      toast.error("Failed to save routine");
+      toast.error("Échec de l'enregistrement de la routine");
     }
     setSaving(false);
   };
@@ -113,7 +113,7 @@ const RoutineGuide = () => {
     const link = `${window.location.origin}/shared/${shareId}`;
     try {
       await navigator.clipboard.writeText(link);
-      toast.success("Link copied to clipboard!");
+      toast.success("Lien copié dans le presse-papiers !");
     } catch (err) {
       // Fallback for when clipboard API fails
       const textArea = document.createElement("textarea");
@@ -124,9 +124,9 @@ const RoutineGuide = () => {
       textArea.select();
       try {
         document.execCommand("copy");
-        toast.success("Link copied to clipboard!");
+        toast.success("Lien copié dans le presse-papiers !");
       } catch (e) {
-        toast.info(`Share link: ${link}`);
+        toast.info(`Lien de partage: ${link}`);
       }
       document.body.removeChild(textArea);
     }
@@ -141,7 +141,7 @@ const RoutineGuide = () => {
       <div className="min-h-screen bg-[#F9F7F2] flex items-center justify-center">
         <div className="text-center">
           <Sparkles className="w-12 h-12 text-[#C27863] mx-auto mb-4 animate-pulse" />
-          <p className="text-[#666666]">Creating your personalized routine...</p>
+          <p className="text-[#666666]">Création de votre routine personnalisée...</p>
         </div>
       </div>
     );
@@ -158,7 +158,7 @@ const RoutineGuide = () => {
             data-testid="back-to-routine-btn"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span className="hidden sm:inline">Back to Steps</span>
+            <span className="hidden sm:inline">Retour aux étapes</span>
           </button>
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-[#C27863]" />
@@ -180,10 +180,10 @@ const RoutineGuide = () => {
               className="font-['Playfair_Display'] text-4xl md:text-5xl font-medium text-[#333333] mb-4"
               data-testid="completion-title"
             >
-              You're All Done!
+              C'est Terminé !
             </h1>
             <p className="text-[#666666] text-lg mb-10">
-              Your personalized makeup routine is complete. Save it for later or share with friends.
+              Votre routine maquillage personnalisée est complète. Enregistrez-la ou partagez-la avec vos amies.
             </p>
 
             {/* Action Buttons */}
@@ -195,7 +195,7 @@ const RoutineGuide = () => {
                 data-testid="save-routine-btn"
               >
                 <Save className="w-4 h-4" />
-                {saving ? "Saving..." : shareId ? "Saved!" : "Save Routine"}
+                {saving ? "Enregistrement..." : shareId ? "Enregistrée !" : "Enregistrer la Routine"}
               </Button>
               
               {shareId && (
@@ -205,7 +205,7 @@ const RoutineGuide = () => {
                   data-testid="copy-link-btn"
                 >
                   <Copy className="w-4 h-4" />
-                  Copy Share Link
+                  Copier le Lien
                 </Button>
               )}
             </div>
@@ -221,8 +221,8 @@ const RoutineGuide = () => {
                   <RotateCcw className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-[#333333]">Try Different Occasion</h3>
-                  <p className="text-sm text-[#666666]">Get new recommendations</p>
+                  <h3 className="font-medium text-[#333333]">Autre Occasion</h3>
+                  <p className="text-sm text-[#666666]">Nouvelles recommandations</p>
                 </div>
               </button>
               
@@ -235,8 +235,8 @@ const RoutineGuide = () => {
                   <Share2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-[#333333]">Saved Routines</h3>
-                  <p className="text-sm text-[#666666]">View all your looks</p>
+                  <h3 className="font-medium text-[#333333]">Mes Routines</h3>
+                  <p className="text-sm text-[#666666]">Voir tous vos looks</p>
                 </div>
               </button>
             </div>
@@ -244,7 +244,7 @@ const RoutineGuide = () => {
             {/* Routine Summary */}
             <div className="mt-12 text-left">
               <h2 className="font-['Playfair_Display'] text-2xl font-medium text-[#333333] mb-6 text-center">
-                Your Routine Summary
+                Résumé de Votre Routine
               </h2>
               <div className="space-y-3">
                 {steps.map((step, index) => (
@@ -262,7 +262,7 @@ const RoutineGuide = () => {
                     </div>
                     {step.skip && (
                       <span className="text-xs bg-[#F9F7F2] text-[#999999] px-3 py-1 rounded-full">
-                        Optional
+                        Optionnel
                       </span>
                     )}
                   </div>
@@ -309,7 +309,7 @@ const RoutineGuide = () => {
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-xs text-[#999999] uppercase tracking-wide">Step</p>
+            <p className="text-xs text-[#999999] uppercase tracking-wide">Étape</p>
             <p className="text-2xl font-['Playfair_Display'] text-[#333333]">
               {currentStep + 1} / {steps.length}
             </p>
@@ -357,7 +357,7 @@ const RoutineGuide = () => {
                   <div className="step-badge">{currentStep + 1}</div>
                   <div>
                     <span className="text-xs font-bold tracking-widest uppercase text-[#C27863]">
-                      Step {currentStep + 1}
+                      Étape {currentStep + 1}
                     </span>
                     <h1 
                       className="font-['Playfair_Display'] text-2xl md:text-3xl font-medium text-[#333333]"
@@ -371,7 +371,7 @@ const RoutineGuide = () => {
                 {currentStepData.skip && (
                   <div className="bg-[#9CAFA0]/10 border border-[#9CAFA0]/30 rounded-xl p-4 mb-6">
                     <p className="text-[#6B7F70] text-sm">
-                      <strong>Optional:</strong> {currentStepData.skip_reason}
+                      <strong>Optionnel :</strong> {currentStepData.skip_reason}
                     </p>
                   </div>
                 )}
@@ -380,7 +380,7 @@ const RoutineGuide = () => {
               {/* Recommendations */}
               <div className="mb-8">
                 <h2 className="text-sm font-bold tracking-widest uppercase text-[#999999] mb-4">
-                  Recommendations
+                  Recommandations
                 </h2>
                 <div className="space-y-3">
                   {currentStepData.recommendations.map((rec, index) => (
@@ -401,7 +401,7 @@ const RoutineGuide = () => {
               <div className="mb-8">
                 <h2 className="text-sm font-bold tracking-widest uppercase text-[#999999] mb-4 flex items-center gap-2">
                   <Lightbulb className="w-4 h-4" />
-                  Pro Tips
+                  Conseils Pro
                 </h2>
                 <div className="space-y-3">
                   {currentStepData.tips.map((tip, index) => (
@@ -430,7 +430,7 @@ const RoutineGuide = () => {
                 data-testid="prev-step-btn"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Previous
+                Précédent
               </Button>
 
               <div className="flex items-center gap-3">
@@ -441,7 +441,7 @@ const RoutineGuide = () => {
                     className="text-[#999999] hover:text-[#666666]"
                     data-testid="skip-step-btn"
                   >
-                    Skip
+                    Passer
                   </Button>
                 )}
                 <Button
@@ -449,7 +449,7 @@ const RoutineGuide = () => {
                   className="btn-primary flex items-center gap-2"
                   data-testid="next-step-btn"
                 >
-                  {currentStep === steps.length - 1 ? "Complete" : "Next"}
+                  {currentStep === steps.length - 1 ? "Terminer" : "Suivant"}
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>

@@ -35,7 +35,7 @@ const SharedRoutine = () => {
       setLoading(false);
     } catch (err) {
       console.error("Error fetching routine:", err);
-      setError("Routine not found");
+      setError("Routine introuvable");
       setLoading(false);
     }
   };
@@ -44,7 +44,7 @@ const SharedRoutine = () => {
     const link = window.location.href;
     try {
       await navigator.clipboard.writeText(link);
-      toast.success("Link copied to clipboard!");
+      toast.success("Lien copié dans le presse-papiers !");
     } catch (err) {
       // Fallback for when clipboard API fails
       const textArea = document.createElement("textarea");
@@ -55,9 +55,9 @@ const SharedRoutine = () => {
       textArea.select();
       try {
         document.execCommand("copy");
-        toast.success("Link copied to clipboard!");
+        toast.success("Lien copié dans le presse-papiers !");
       } catch (e) {
-        toast.info(`Share link: ${link}`);
+        toast.info(`Lien de partage: ${link}`);
       }
       document.body.removeChild(textArea);
     }
@@ -65,24 +65,52 @@ const SharedRoutine = () => {
 
   const getOccasionLabel = (occasion) => {
     const labels = {
-      everyday: "Everyday",
-      work: "Work",
-      night_out: "Night Out",
-      special_event: "Special Event"
+      everyday: "Quotidien",
+      work: "Travail",
+      night_out: "Soirée",
+      special_event: "Événement Spécial"
     };
     return labels[occasion] || occasion;
   };
 
   const getSkinToneLabel = (tone) => {
     const labels = {
-      very_fair: "Very Fair",
-      fair: "Fair",
-      light: "Light",
-      medium: "Medium",
-      tan: "Tan",
-      deep: "Deep"
+      very_fair: "Très clair",
+      fair: "Clair",
+      light: "Léger",
+      medium: "Moyen",
+      tan: "Hâlé",
+      deep: "Foncé"
     };
     return labels[tone] || tone;
+  };
+
+  const getUndertoneLabel = (undertone) => {
+    const labels = {
+      cool: "froid",
+      warm: "chaud",
+      neutral: "neutre",
+      olive: "olive"
+    };
+    return labels[undertone] || undertone;
+  };
+
+  const getSkinTypeLabel = (type) => {
+    const labels = {
+      oily: "Grasse",
+      dry: "Sèche",
+      combination: "Mixte",
+      normal: "Normale"
+    };
+    return labels[type] || type;
+  };
+
+  const getLevelLabel = (level) => {
+    const labels = {
+      beginner: "Débutante",
+      intermediate: "Intermédiaire"
+    };
+    return labels[level] || level;
   };
 
   if (loading) {
@@ -90,7 +118,7 @@ const SharedRoutine = () => {
       <div className="min-h-screen bg-[#F9F7F2] flex items-center justify-center">
         <div className="text-center">
           <Sparkles className="w-12 h-12 text-[#C27863] mx-auto mb-4 animate-pulse" />
-          <p className="text-[#666666]">Loading routine...</p>
+          <p className="text-[#666666]">Chargement de la routine...</p>
         </div>
       </div>
     );
@@ -104,17 +132,17 @@ const SharedRoutine = () => {
             <Sparkles className="w-10 h-10 text-[#C27863]" />
           </div>
           <h1 className="font-['Playfair_Display'] text-2xl font-medium text-[#333333] mb-4">
-            Routine Not Found
+            Routine Introuvable
           </h1>
           <p className="text-[#666666] mb-8">
-            This routine might have been removed or the link is incorrect.
+            Cette routine a peut-être été supprimée ou le lien est incorrect.
           </p>
           <Button
             onClick={() => navigate("/")}
             className="btn-primary"
             data-testid="go-home-btn"
           >
-            Create Your Own Routine
+            Créer Votre Propre Routine
           </Button>
         </div>
       </div>
@@ -131,7 +159,7 @@ const SharedRoutine = () => {
           data-testid="back-home-btn"
         >
           <ArrowLeft className="w-5 h-5" />
-          <span className="hidden sm:inline">Home</span>
+          <span className="hidden sm:inline">Accueil</span>
         </button>
         <div className="flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-[#C27863]" />
@@ -145,7 +173,7 @@ const SharedRoutine = () => {
           data-testid="share-btn"
         >
           <Copy className="w-5 h-5" />
-          <span className="hidden sm:inline">Copy Link</span>
+          <span className="hidden sm:inline">Copier le Lien</span>
         </button>
       </header>
 
@@ -154,40 +182,40 @@ const SharedRoutine = () => {
           {/* Routine Header */}
           <div className="text-center mb-10">
             <span className="text-xs font-bold tracking-widest uppercase text-[#9CAFA0] mb-3 block">
-              Shared Routine
+              Routine Partagée
             </span>
             <h1 
               className="font-['Playfair_Display'] text-3xl md:text-4xl font-medium text-[#333333] mb-4"
               data-testid="routine-title"
             >
-              {getOccasionLabel(routine.profile.occasion)} Look
+              Look {getOccasionLabel(routine.profile.occasion)}
             </h1>
             <p className="text-[#666666]">
-              Personalized for {getSkinToneLabel(routine.profile.skin_tone)} skin with {routine.profile.undertone} undertones
+              Personnalisée pour une peau {getSkinToneLabel(routine.profile.skin_tone)} avec des sous-tons {getUndertoneLabel(routine.profile.undertone)}s
             </p>
           </div>
 
           {/* Profile Summary */}
           <div className="card-feature mb-8">
             <h2 className="text-sm font-bold tracking-widest uppercase text-[#999999] mb-4">
-              Skin Profile
+              Profil de Peau
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div>
-                <p className="text-xs text-[#999999] uppercase">Skin Tone</p>
+                <p className="text-xs text-[#999999] uppercase">Teint</p>
                 <p className="font-medium text-[#333333]">{getSkinToneLabel(routine.profile.skin_tone)}</p>
               </div>
               <div>
-                <p className="text-xs text-[#999999] uppercase">Undertone</p>
-                <p className="font-medium text-[#333333] capitalize">{routine.profile.undertone}</p>
+                <p className="text-xs text-[#999999] uppercase">Sous-ton</p>
+                <p className="font-medium text-[#333333] capitalize">{getUndertoneLabel(routine.profile.undertone)}</p>
               </div>
               <div>
-                <p className="text-xs text-[#999999] uppercase">Skin Type</p>
-                <p className="font-medium text-[#333333] capitalize">{routine.profile.skin_type}</p>
+                <p className="text-xs text-[#999999] uppercase">Type de Peau</p>
+                <p className="font-medium text-[#333333] capitalize">{getSkinTypeLabel(routine.profile.skin_type)}</p>
               </div>
               <div>
-                <p className="text-xs text-[#999999] uppercase">Level</p>
-                <p className="font-medium text-[#333333] capitalize">{routine.profile.makeup_level}</p>
+                <p className="text-xs text-[#999999] uppercase">Niveau</p>
+                <p className="font-medium text-[#333333] capitalize">{getLevelLabel(routine.profile.makeup_level)}</p>
               </div>
             </div>
           </div>
@@ -212,7 +240,7 @@ const SharedRoutine = () => {
                       {step.title}
                     </h3>
                     {step.skip && (
-                      <span className="text-xs text-[#9CAFA0]">Optional</span>
+                      <span className="text-xs text-[#9CAFA0]">Optionnel</span>
                     )}
                   </div>
                   <ChevronRight
@@ -232,7 +260,7 @@ const SharedRoutine = () => {
 
                     <div className="mb-4">
                       <h4 className="text-xs font-bold tracking-widest uppercase text-[#999999] mb-3">
-                        Recommendations
+                        Recommandations
                       </h4>
                       <div className="space-y-2">
                         {step.recommendations.map((rec, i) => (
@@ -247,7 +275,7 @@ const SharedRoutine = () => {
                     <div>
                       <h4 className="text-xs font-bold tracking-widest uppercase text-[#999999] mb-3 flex items-center gap-2">
                         <Lightbulb className="w-3 h-3" />
-                        Tips
+                        Conseils
                       </h4>
                       <div className="space-y-2">
                         {step.tips.map((tip, i) => (
@@ -265,13 +293,13 @@ const SharedRoutine = () => {
 
           {/* CTA */}
           <div className="mt-12 text-center">
-            <p className="text-[#666666] mb-4">Want your own personalized routine?</p>
+            <p className="text-[#666666] mb-4">Vous voulez votre propre routine personnalisée ?</p>
             <Button
               onClick={() => navigate("/setup")}
               className="btn-primary flex items-center gap-2 mx-auto"
               data-testid="create-own-btn"
             >
-              Create Your Routine
+              Créer Ma Routine
               <ExternalLink className="w-4 h-4" />
             </Button>
           </div>

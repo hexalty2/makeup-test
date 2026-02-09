@@ -8,23 +8,23 @@ const LandingPage = () => {
   const features = [
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Personalized for You",
-      description: "Recommendations tailored to your unique skin tone, type, and style"
+      title: "Personnalisé pour vous",
+      description: "Des recommandations adaptées à votre teint, type de peau et style unique"
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Step-by-Step Guide",
-      description: "Follow along at your own pace with clear, simple instructions"
+      title: "Guide étape par étape",
+      description: "Suivez à votre rythme avec des instructions claires et simples"
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Beginner Friendly",
-      description: "No makeup experience needed - we'll guide you through everything"
+      title: "Adapté aux débutantes",
+      description: "Aucune expérience maquillage requise - on vous guide à chaque étape"
     },
     {
       icon: <Share2 className="w-6 h-6" />,
-      title: "Save & Share",
-      description: "Keep your favorite routines and share them with friends"
+      title: "Enregistrez & Partagez",
+      description: "Gardez vos routines favorites et partagez-les avec vos amies"
     }
   ];
 
@@ -36,7 +36,7 @@ const LandingPage = () => {
         <div className="flex flex-col justify-center px-6 md:px-12 lg:px-24 py-12 lg:py-0">
           <div className="animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
             <span className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#C27863] mb-4 block">
-              Your Personal Makeup Coach
+              Votre Coach Maquillage Personnel
             </span>
           </div>
           
@@ -45,15 +45,15 @@ const LandingPage = () => {
             style={{ animationDelay: "0.2s" }}
             data-testid="hero-title"
           >
-            Makeup Made <br />
-            <span className="text-[#C27863]">Simple</span>
+            Le Maquillage <br />
+            <span className="text-[#C27863]">Simplifié</span>
           </h1>
           
           <p 
             className="text-base md:text-lg leading-relaxed text-[#666666] mb-8 max-w-md animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
-            A personal makeup guide that removes all the guesswork. Get step-by-step recommendations tailored to your skin.
+            Un guide maquillage personnel qui élimine toutes les incertitudes. Obtenez des recommandations étape par étape adaptées à votre peau.
           </p>
           
           <div 
@@ -65,7 +65,7 @@ const LandingPage = () => {
               className="btn-primary"
               data-testid="get-started-btn"
             >
-              Get Started
+              Commencer
             </Button>
             <Button
               onClick={() => navigate("/saved")}
@@ -73,7 +73,7 @@ const LandingPage = () => {
               className="btn-secondary"
               data-testid="view-saved-btn"
             >
-              View Saved Routines
+              Mes Routines
             </Button>
           </div>
         </div>
@@ -83,7 +83,7 @@ const LandingPage = () => {
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#F9F7F2] z-10" />
           <img
             src="https://images.unsplash.com/photo-1672794776762-18dddc72982e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGFwcGx5aW5nJTIwbWFrZXVwJTIwbmF0dXJhbCUyMGxvb2slMjBkaXZlcnNlJTIwc2tpbiUyMHRvbmVzfGVufDB8fHx8MTc3MDYxMjM1Mnww&ixlib=rb-4.1.0&q=85"
-            alt="Woman with natural makeup"
+            alt="Femme avec maquillage naturel"
             className="w-full h-full object-cover"
             data-testid="hero-image"
           />
@@ -94,10 +94,10 @@ const LandingPage = () => {
       <div className="px-6 md:px-12 lg:px-24 py-16 lg:py-24 bg-white">
         <div className="text-center mb-12">
           <span className="text-xs font-bold tracking-widest uppercase text-[#9CAFA0] mb-4 block">
-            How It Works
+            Comment ça marche
           </span>
           <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl font-medium text-[#333333]">
-            Beauty Without the Overwhelm
+            La Beauté Sans Stress
           </h2>
         </div>
 
@@ -127,17 +127,17 @@ const LandingPage = () => {
       <div className="px-6 md:px-12 lg:px-24 py-16 lg:py-24 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-['Playfair_Display'] text-3xl md:text-4xl font-medium text-[#333333] mb-4">
-            Ready to Glow?
+            Prête à Rayonner ?
           </h2>
           <p className="text-[#666666] mb-8">
-            Takes just 2 minutes to set up your personalized routine.
+            Seulement 2 minutes pour créer votre routine personnalisée.
           </p>
           <Button
             onClick={() => navigate("/setup")}
             className="btn-primary"
             data-testid="cta-btn"
           >
-            Start Your Journey
+            Commencer Mon Parcours
           </Button>
         </div>
       </div>
@@ -152,7 +152,7 @@ const LandingPage = () => {
             </span>
           </div>
           <p className="text-sm text-[#999999]">
-            Your personal makeup guide
+            Votre guide maquillage personnel
           </p>
         </div>
       </footer>
