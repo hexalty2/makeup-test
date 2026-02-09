@@ -1,0 +1,139 @@
+{
+  "project_name": "GlowGuide - Personalized Makeup Coach",
+  "design_philosophy": {
+    "theme": "Clean Beauty Editorial",
+    "core_concept": "Digital Vanity Mirror",
+    "emotional_tone": "Intimate, Encouraging, Sophisticated, Clarity",
+    "visual_style": "Soft Feminine x Modern Minimalist"
+  },
+  "typography": {
+    "font_family_heading": "Playfair Display, serif",
+    "font_family_body": "Lato, sans-serif",
+    "scaling": {
+      "h1": "text-4xl md:text-6xl font-medium tracking-tight leading-tight",
+      "h2": "text-3xl md:text-5xl font-normal leading-snug",
+      "h3": "text-2xl md:text-3xl font-medium",
+      "body": "text-base md:text-lg leading-relaxed text-stone-600",
+      "caption": "text-xs md:text-sm font-bold tracking-widest uppercase text-stone-400"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "main": "#C27863",
+        "light": "#E0AFA0",
+        "dark": "#8A5342",
+        "description": "Warm Terracotta / Clay - Used for CTAs and active states"
+      },
+      "secondary": {
+        "main": "#9CAFA0",
+        "light": "#C3D1C6",
+        "dark": "#6B7F70",
+        "description": "Soft Sage - Used for success states and nature accents"
+      },
+      "background": {
+        "main": "#F9F7F2",
+        "card": "#FFFFFF",
+        "overlay": "rgba(249, 247, 242, 0.8)",
+        "description": "Bone / Warm Paper - Never pure white #FFFFFF for main bg"
+      },
+      "text": {
+        "primary": "#333333",
+        "secondary": "#666666",
+        "muted": "#999999",
+        "description": "Soft Charcoal - Never pure black #000000"
+      },
+      "accent": {
+        "gold": "#D4AF37",
+        "rose": "#E8C3C3"
+      }
+    },
+    "gradients": {
+      "hero_fade": "linear-gradient(180deg, rgba(249,247,242,0) 0%, #F9F7F2 100%)",
+      "skin_glow": "radial-gradient(circle at 50% 50%, #E8C3C3 0%, rgba(255,255,255,0) 70%)"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "container_padding": "p-6 md:p-12 lg:p-24",
+      "section_gap": "gap-12 md:gap-24",
+      "element_gap": "gap-4 md:gap-8"
+    },
+    "grid_system": {
+      "marketing": "grid-cols-1 md:grid-cols-12 gap-8",
+      "dashboard": "grid-cols-1 md:grid-cols-3 gap-6"
+    },
+    "border_radius": {
+      "card": "rounded-[2rem]",
+      "button": "rounded-full",
+      "input": "rounded-xl"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#C27863] text-white hover:bg-[#8A5342] rounded-full px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-300 shadow-[0_4px_14px_0_rgba(194,120,99,0.39)] hover:shadow-[0_6px_20px_rgba(194,120,99,0.23)] hover:-translate-y-1",
+      "secondary": "bg-transparent border border-[#C27863] text-[#C27863] hover:bg-[#F9F7F2] rounded-full px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-300",
+      "ghost": "text-[#666666] hover:text-[#C27863] font-medium transition-colors"
+    },
+    "cards": {
+      "feature": "bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 border border-stone-100",
+      "product": "bg-white aspect-[3/4] rounded-[1.5rem] p-4 relative overflow-hidden group hover:shadow-xl transition-all"
+    },
+    "inputs": {
+      "standard": "bg-[#F9F7F2] border-none text-[#333333] placeholder:text-[#999999] rounded-xl px-6 py-4 focus:ring-2 focus:ring-[#C27863]/20 transition-all",
+      "select": "bg-[#F9F7F2] border-none text-[#333333] rounded-xl px-6 py-4"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "soft": "0 8px 30px rgb(0,0,0,0.04)",
+      "float": "0 20px 40px -12px rgba(0,0,0,0.1)"
+    },
+    "textures": {
+      "noise": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")"
+    },
+    "micro_interactions": {
+      "hover_lift": "hover:-translate-y-1 transition-transform duration-300",
+      "fade_in": "animate-in fade-in duration-700 slide-in-from-bottom-4"
+    }
+  },
+  "image_urls": {
+    "textures": [
+      {
+        "url": "https://images.unsplash.com/photo-1748543668687-624e058c367c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHw0fHxjb3NtZXRpYyUyMGNyZWFtJTIwdGV4dHVyZXxlbnwwfHx8fDE3NzA2MTIzNjR8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract viscous cosmetic texture overlap, neutral background",
+        "category": "texture"
+      },
+      {
+         "url": "https://images.unsplash.com/photo-1627051882057-2e7ca9a2f96a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwzfHxtYWtldXAlMjB0ZXh0dXJlJTIwY3JlYW0lMjBzbWVhciUyMGJlaWdlJTIwcGlua3xlbnwwfHx8fDE3NzA2MTIzNTJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Red textile close up, rich texture",
+         "category": "texture"
+      }
+    ],
+    "people": [
+      {
+        "url": "https://images.unsplash.com/photo-1672794776762-18dddc72982e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGFwcGx5aW5nJTIwbWFrZXVwJTIwbmF0dXJhbCUyMGxvb2slMjBkaXZlcnNlJTIwc2tpbiUyMHRvbmVzfGVufDB8fHx8MTc3MDYxMjM1Mnww&ixlib=rb-4.1.0&q=85",
+        "description": "Woman with freckled hair posing, natural makeup",
+        "category": "hero"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1645017324561-5de0e0739ec9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHx3b21hbiUyMGFwcGx5aW5nJTIwbWFrZXVwJTIwbmF0dXJhbCUyMGxvb2slMjBkaXZlcnNlJTIwc2tpbiUyMHRvbmVzfGVufDB8fHx8MTc3MDYxMjM1Mnww&ixlib=rb-4.1.0&q=85",
+        "description": "Woman doing makeup, close up",
+        "category": "step_guide"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "DO NOT use generic centered layouts. Use split screens (50/50) or asymmetric grids.",
+    "Use the custom noise texture in the 'visual_enhancers' section as an overlay on the main background with `mix-blend-mode: overlay`.",
+    "For the Progress Tracker: Create a vertical line on the left side of the screen that tracks the user's journey through the 9 steps. Active step should be a filled circle, future steps empty circles.",
+    "For the Quiz: Use 'Selectable Cards' with large touch targets. When selected, the card should glow with the Primary Color border.",
+    "Typography: Use Playfair Display for all Headers. Use Lato for all body text.",
+    "Buttons: MUST be rounded-full (pill shaped).",
+    "Shadows: Use the soft custom shadows defined in visual_enhancers. Avoid default Tailwind shadows."
+  ],
+  "universal_guidelines": {
+    "do_not_use": ["gradients_on_text", "pure_black", "pure_white_backgrounds", "sharp_corners"],
+    "must_use": ["micro_interactions", "skeleton_loaders", "data_testid_attributes", "responsive_images"]
+  }
+}
