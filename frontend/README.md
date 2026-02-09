@@ -29,6 +29,15 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run deploy`
+
+Deploys the app to GitHub Pages.\
+This will build the app and push it to the `gh-pages` branch.
+
+The app will be accessible at `https://hexalty2.github.io/makeup-test/`
+
+**Note:** Deployment via GitHub Actions is configured in `.github/workflows/deploy.yml`. Commits to the `main` branch will automatically trigger a deployment.
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**

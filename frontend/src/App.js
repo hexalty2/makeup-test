@@ -10,7 +10,7 @@ import SavedRoutines from "@/pages/SavedRoutines";
 function App() {
   return (
     <div className="App min-h-screen bg-[#F9F7F2]">
-      <BrowserRouter>
+      <BrowserRouter basename="/makeup-test">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/setup" element={<ProfileSetup />} />

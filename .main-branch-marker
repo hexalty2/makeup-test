@@ -1,0 +1,3 @@
+# Main Branch Marker
+This file indicates that this branch is the main deployment branch for GitHub Pages.
+The presence of this file triggers the GitHub Actions deployment workflow.
